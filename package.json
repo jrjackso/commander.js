@@ -30,10 +30,10 @@
   },
   "devDependencies": {
     "@types/node": "^7.0.55",
-    "eslint": "^3.19.0",
+    "eslint": "^9.14.0",
     "should": "^11.2.1",
     "sinon": "^2.4.1",
-    "standard": "^10.0.3",
+    "standard": "^17.1.2",
     "typescript": "^2.7.2"
   },
   "typings": "typings/index.d.ts"
