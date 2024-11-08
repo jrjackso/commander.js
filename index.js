@@ -562,7 +562,11 @@ Command.prototype.executeSubCommand = function(argv, args, unknown) {
 
     proc = spawn(process.argv[0], args, { stdio: 'inherit', customFds: [0, 1, 2] });
   } else {
-    proc = spawn(bin, args, { stdio: 'inherit', customFds: [0, 1, 2] });
+    proc = spawn(bin, args, { 
+      stdio: 'inherit', 
+      shell: true, // This is required for Windows due to https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2
+      customFds: [0, 1, 2] 
+    });
   }
 
   var signals = ['SIGUSR1', 'SIGUSR2', 'SIGTERM', 'SIGINT', 'SIGHUP'];
